@@ -1,0 +1,7 @@
+﻿/*个人信息样式*/
+.adv-table .dataTables_filter label input {float: right;margin-left: 10px;width: 77% !important;}
+#example_length {float: left;}
+#example_info {float: left;}
+#example_length {width: 190px;overflow: hidden;height: 50px;}
+.dataTables_paginate.paging_bootstrap.pagination li:hover a, .dataTables_paginate.paging_bootstrap.pagination li.active a{background:#4895cb !important;border:none !important;}
+
