@@ -4335,7 +4335,7 @@ table.sliders tr td {
 }
 
 .stepy-titles li span {
-	display: block;
+	display: block;text-align: center;
 }
 
 .stepy-titles li.current-step div {
@@ -4343,7 +4343,7 @@ table.sliders tr td {
 	cursor: auto;
 	background: #147692;
 	border-radius: 10px;
-	width: 150px;
+	width: 120px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
@@ -4354,7 +4354,7 @@ table.sliders tr td {
 	font-weight: 300;
 	background: #eee;
 	border-radius: 10px;
-	width: 150px;
+	width: 120px;
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
