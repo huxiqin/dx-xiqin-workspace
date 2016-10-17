@@ -22,6 +22,10 @@
     <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS  -->
     <link href="css/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS  -->
        <link href="css/jquery.stepy.css" rel="stylesheet"><!-- JQUERY STEPY WIZARD CSS -->
+       <style>
+           h3{margin-top:0px;}
+           .selectf{display:flex;}          
+       </style>
       <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -583,7 +587,7 @@
 			<!-- BEGIN WRAPPER  -->
                <section class="wrapper">
                    <!-- BEGIN ROW  -->
-                   <div class="row">
+                   <!--<div class="row">
                        <div class="col-lg-12">
                            <ul class="breadcrumb">
                                <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
@@ -593,7 +597,7 @@
                                <li class="active">Data</li>
                            </ul>
                        </div>
-                   </div>
+                   </div>-->
                    <!-- END ROW  -->
                    <!-- BEGIN ROW  -->
                    <div class="row">
@@ -609,7 +613,7 @@
                                <div class="panel-body">
                                    <h4 class="fw-title">制单流程</h4>
                                    <div class="box-widget">
-                                       <div class="widget-head clearfix">
+                                       <div class="widget-head clearfix" style="margin-bottom:40px;">
                                            <div id="top_tabby" class="block-tabby ">
                                            </div>
                                        </div>
@@ -623,7 +627,7 @@
                                                                <label class="col-md-2 col-sm-2 control-label">制单方式</label>
                                                                <div class="col-md-6 col-sm-6">
 
-                                                                   <select class="form-control m-bot15">
+                                                                   <select class="form-control">
                                                                        <option>自投邮局</option>
                                                                        <option>送货到库</option>
                                                                    </select>
@@ -632,7 +636,7 @@
                                                            <div class="form-group">
                                                                <label class="col-md-2 col-sm-2 control-label">包装材料</label>
                                                                <div class="col-md-6 col-sm-6">
-                                                                   <select class="form-control m-bot15">
+                                                                   <select class="form-control">
                                                                        <option>套餐一</option>
                                                                        <option>套餐二</option>
                                                                        <option>套餐三</option>
@@ -649,7 +653,7 @@
                                                            <div class="form-group">
                                                                <label class="col-md-2 col-sm-2 control-label">选择寄件人</label>
                                                                <div class="col-md-6 col-sm-6">
-                                                                   <select class="form-control m-bot15">
+                                                                   <select class="form-control">
                                                                        <option>张三</option>
                                                                        <option>李希</option>
                                                                        <option>郭蕾</option>
@@ -694,8 +698,10 @@
                                                            </div>
                                                            <div class="form-group">
                                                                <label class="col-md-2 col-sm-2 control-label">所在地区</label>
-                                                               <div class="col-md-6 col-sm-6">
-                                                                   <input type="text" placeholder="请输入详细地址" class="form-control">
+                                                               <div class="col-md-6 col-sm-6 selectf">                                                                  
+                                                                    <select class="form-control" id="s_province" name="s_province"></select>
+                                                                    <select class="form-control" id="s_city" name="s_city"></select>
+                                                                    <select class="form-control" id="s_county" name="s_county"></select> 
                                                                </div>
                                                            </div>
                                                            <div class="form-group">
@@ -710,7 +716,7 @@
                                                            <div class="form-group">
                                                                <label class="col-md-2 col-sm-2 control-label">选择收件人</label>
                                                                <div class="col-md-6 col-sm-6">
-                                                                   <select class="form-control m-bot15">
+                                                                   <select class="form-control">
                                                                        <option>张三</option>
                                                                        <option>李希</option>
                                                                        <option>郭蕾</option>
@@ -755,8 +761,10 @@
                                                            </div>
                                                            <div class="form-group">
                                                                <label class="col-md-2 col-sm-2 control-label">所在地区</label>
-                                                               <div class="col-md-6 col-sm-6">
-                                                                   <input type="text" placeholder="请输入详细地址" class="form-control">
+                                                               <div class="col-md-6 col-sm-6 selectf">
+                                                                   <select class="form-control" id="s_province2" name="s_province2"></select>
+                                                                   <select class="form-control" id="s_city2" name="s_city2"></select>
+                                                                   <select class="form-control" id="s_county2" name="s_county2"></select>
                                                                </div>
                                                            </div>
                                                            <div class="form-group">
@@ -803,14 +811,6 @@
                                                                    </label>
                                                                </div>
                                                            </div>
-                                                           <!--<div class="form-group">
-                                                               <div class="checkbox">
-                                                                   <label class="col-md-5 col-sm-5">
-                                                                       <input type="checkbox" name="insurance">
-                                                                       是否保险
-                                                                   </label>
-                                                               </div>
-                                                           </div>-->
                                                            <div class="panel panel-default form-group">
                                                                <div class="panel-heading">
                                                                    <h3 class="panel-title text-danger">温馨提示</h3>
@@ -842,10 +842,10 @@
                                                                                    <input type="text" placeholder="请输入发票金额" class="form-control">
                                                                                </div>
                                                                            </div>
-                                                                           <div class="form-group">
+                                                                           <div class="form-group" style="margin-bottom:0;">
                                                                                <label class="col-md-3 col-sm-3 control-label">商品用途</label>
                                                                                <div class="col-md-8 col-sm-8">
-                                                                                   <select class="form-control m-bot15">
+                                                                                   <select class="form-control">
                                                                                        <option>礼物</option>
                                                                                        <option>样品</option>
                                                                                        <option>商业</option>
@@ -887,8 +887,8 @@
                                                                                    <input type="text" placeholder="请输入每件重量" class="form-control">
                                                                                </div>
                                                                            </div>
-                                                                           <div class="form-group" style="text-align:center;">
-                                                                               <button type="submit" class="btn btn-info btn-extend" > 添加 </button>
+                                                                           <div class="form-group" style="text-align:center;margin-bottom:0;">
+                                                                               <button type="submit" class="btn btn-info btn-extend" > 添 加 </button>
                                                                            </div>
                                                                         </div>
                                                                    </div>
@@ -1035,8 +1035,8 @@
                                                                    </div>
                                                                </div>
                                                            </fieldset>
-                                                           <button type="submit" class="finish btn btn-info btn-extend"> 完成 </button>
-</form>
+                                                           <button type="submit" class="finish btn btn-info btn-extend"> 完 成 </button>
+                                                   </form>
                                                </div>
                                            </div>
                                        </div>
@@ -1046,8 +1046,6 @@
                        </div>
                    </div>
                    <!-- END ROW  -->
-                 
-			
                </section>
 			   <!-- END WRAPPER  -->
             </section>
@@ -1055,10 +1053,7 @@
 			<!-- BEGIN FOOTER --> 
             <footer class="site-footer">
                <div class="text-center">
-                  2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.
-                  <a href="http://www.mycodes.net" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-                  </a>
+                  2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.                 
                </div>
             </footer>
 			<!-- END FOOTER --> 
@@ -1075,8 +1070,11 @@
     <script src="js/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
     <script src="js/respond.min.js" ></script><!-- RESPOND JS  -->
     <script src="js/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
-       <script src="js/jquery.stepy.js"></script><!-- JQUERY STEPY WIZARD JS  -->
-       <script src="js/jquery.validate.min.js"></script><!-- VALIDATE JS  -->
+    <script src="js/jquery.stepy.js"></script><!-- JQUERY STEPY WIZARD JS  -->
+    <script src="js/jquery.validate.min.js"></script><!-- VALIDATE JS  -->
+    <script src="js/area.js"></script> <!--省份地区选择联动-->
+    <script type="text/javascript">_init_area();</script>
+    <script type="text/javascript">_init_area2();</script>  
        <script>
          /*=====STEPY WIZARD====*/
          $(function() {
