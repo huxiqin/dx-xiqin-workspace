@@ -11,19 +11,32 @@
 	  <link rel="shortcut icon" href="img/favicon.ico">
 	  <!-- END SHORTCUT ICON -->
      
-	 <title>操作日志</title>
-	  
-	  
-	  
-	  <!-- BEGIN STYLESHEET --> 
+	 <title>彼得潘国际物流</title>
+
+	<!-- BEGIN STYLESHEET --> 
     <link href="css/information.css" rel="stylesheet" />
 	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS  -->
 	<link href="css/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS  -->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME CSS  -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css"><!-- BOOTSTRAP WYSIHTML5 PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css"><!-- BOOTSTRAP DATEPICKER PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-timepicker/compiled/timepicker.css"><!-- BOOTSTRAP TIMEPICKER PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-colorpicker/css/colorpicker.css"><!-- BOOTSTRAP COLORPICKER PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-daterangepicker/daterangepicker-bs3.css"><!-- DATERANGE PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datetimepicker/css/datetimepicker.css"><!-- DATETIMEPICKER PLUGIN CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/jquery-multi-select/css/multi-select.css"><!-- JQUERY MULTI SELECT PLUGIN CSS -->
+
     <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS  -->
     <link href="css/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS  -->
-    <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
-
+    <style>
+        .m-bot15 { margin-bottom: 15px!important;margin-right:40px;}
+        .dataTables_filter{display:none;}
+        .export{position: relative;float: right;}
+        .color-red{color:red;}
+        .color-green{color:#00ff21;}
+        .mutil-download{position: absolute; margin-top: -15px;}
+        .mutil-download input{margin:8px 12px;} 
+    </style>
       <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -36,7 +49,7 @@
       <div class="container">
 	     
 		  <!-- BEGIN SECTION --> 
-         <section id="container" class="">
+         <section id="container">
 		     
 			 <!-- BEGIN HEADER --> 
             <header class="header white-bg">
@@ -366,32 +379,31 @@
           
         </nav>
         
-        <!-- END HEADER NAV -->
-        
+        <!-- END HEADER NAV -->        
         
         <!-- START USER LOGIN DROPDOWN  -->
-                  <div class="top-nav ">
-                     <ul class="nav pull-right top-menu">
-                        <li>
-                           <input type="text" class="form-control search" placeholder="Search">
-                        </li>
-                        <li class="dropdown">
-                           <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                           <img alt="" src="img/avatar1_small.jpg">
-                           <span class="username">Pruthvi</span>
-                           <b class="caret"></b>
-                           </a>
-                           <ul class="dropdown-menu extended logout">
-                              <li class="log-arrow-up"></li>
-                              <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                              <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                              <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
-                              <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </div>
-				 <!-- END USER LOGIN DROPDOWN  -->
+        <div class="top-nav ">
+            <ul class="nav pull-right top-menu">
+            <li>
+                <input type="text" class="form-control search" placeholder="Search">
+            </li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="img/avatar1_small.jpg">
+                <span class="username">Pruthvi</span>
+                <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <li class="log-arrow-up"></li>
+                    <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                    <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                    <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+		<!-- END USER LOGIN DROPDOWN  -->
                </div>
             </header>
 			<!-- END HEADER --> 
@@ -480,7 +492,6 @@
                                  <span>
                                      DHL
                                  </span>
-
                              </a>
                              <ul class="sub">
                                  <li>
@@ -512,7 +523,6 @@
                                  <span>
                                      余额管理
                                  </span>
-
                              </a>
                              <ul class="sub">
                                  <li>
@@ -591,103 +601,272 @@
 			<!-- BEGIN MAIN CONTENT --> 
              <section id="main-content">
                  <section class="wrapper site-min-height">
+
                      <!-- BEGIN ROW  -->
                      <div class="row">
                          <div class="col-lg-12">
                              <section class="panel">
                                  <header class="panel-heading">
-                                     <span class="label label-primary">操作日志</span>
+                                     <span class="label label-primary">订单查询</span>
                                      <span class="tools pull-right">
                                          <a href="javascript:;" class="fa fa-chevron-down"></a>
                                          <a href="javascript:;" class="fa fa-times"></a>
                                      </span>
                                  </header>
                                  <div class="panel-body">
+                                     <form class="form-inline" role="form">
+                                         <div class="form-group m-bot15">
+                                             订单编号：
+                                             <label class="sr-only" for="exampleInputEmail2">订单编号</label>
+                                             <input type="text" class="form-control sm-input" id="exampleInputEmail5" placeholder="订单编号">
+                                         </div>
+                                         <div class="form-group m-bot15">
+                                             订单状态：
+                                             <label class="sr-only" for="exampleInputEmail2">订单状态</label>
+                                             <select class="form-control">
+                                                 <option>--选择订单状态--</option>
+                                                 <option>提交订单</option>
+                                                 <option>正在制单</option>
+                                                 <option>已完成</option>
+                                                 <option>已取消</option>
+                                             </select>
+                                         </div>
+                                         <div class="form-group m-bot15">
+                                             &nbsp;&nbsp;收 件人：
+                                             <label class="sr-only" for="exampleInputEmail2">收件人</label>
+                                             <input type="text" class="form-control sm-input" id="exampleInputEmail5" placeholder="收件人">
+                                         </div>
+                                         <div class="form-group m-bot15">
+                                             运单编号：
+                                             <label class="sr-only" for="exampleInputEmail2">运单编号</label>
+                                             <input type="text" class="form-control sm-input" id="exampleInputEmail5" placeholder="运单编号">
+                                         </div>
+
+                                         
+                                         <div class="form-group m-bot15">
+                                             运单状态：
+                                             <label class="sr-only" for="exampleInputEmail2">运单状态</label>
+                                             <select class="form-control">
+                                                 <option>--选择运单状态--</option>
+                                                 <option>未投递</option>
+                                                 <option>已投递</option>
+                                                 <option>已丢失</option>
+                                                 <option>已签收</option>
+                                             </select>
+                                         </div>
+                                         <div class="form-group m-bot15">
+                                             &nbsp;&nbsp;发 件 人：
+                                             <label class="sr-only" for="exampleInputEmail2">发件人</label>
+                                             <input type="text" class="form-control sm-input" id="exampleInputEmail5" placeholder="发件人">
+                                         </div>
+                                         <br />
+                                         <div class="form-group m-bot15">                                          
+                                                 
+                                             <div class="form-group" style="height:34px;line-height:34px;width:60px;position:relative;float:left;text-align:right;">时间段：</div>
+                                                 <div class="col-md-6">
+                                                     <div class="input-group input-large" data-date="13/07/2013" data-date-format="mm/dd/yyyy">
+                                                         <input type="text" class="form-control dpd1" name="from">
+                                                         <span class="input-group-addon">
+                                                             To
+                                                         </span>
+                                                         <input type="text" class="form-control dpd2" name="to">
+                                                     </div>
+
+                                                 </div>
+                                             </div>
+
+                                         <div class="form-group m-bot15">
+                                             超重订单：
+                                             <label class="sr-only" for="exampleInputEmail2">超重订单</label>
+                                             <select class="form-control">
+                                                 <option>--选择是否超重--</option>
+                                                 <option>已超重</option>
+                                                 <option>未超重</option>
+                                             </select>
+                                         </div>                                                              
+                                       
+                                         <button type="submit" class="btn btn-info m-bot15"> 查 询 </button>
+                                     </form>
+                                     <button type="button" class="btn btn-info export"> 导 出 </button>
+                                   
                                      <div class="adv-table">
                                          <table class="display table table-bordered table-striped" id="example">
                                              <thead>
                                                  <tr>
-                                                     <th>流水号</th>
-                                                     <th class="hidden-phone">日志时间</th>
-                                                     <th class="hidden-phone">日志内容</th>
+                                                     <th></th>
+                                                     <th>订单号</th>
+                                                     <th class="hidden-phone">发件人</th>
+                                                     <th class="hidden-phone">收件人</th>
+                                                     <th>重量</th>
+                                                     <th>运费</th>
+                                                     <th>创建时间</th>
+                                                     <th>运单号</th>
+                                                     <th>订单状态</th>
+                                                     <th>提示</th>
+                                                     <th>操作</th>
                                                  </tr>
                                              </thead>
                                              <tbody>
                                                  <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:55:01</td>
-                                                     <td class="center hidden-phone">用户fenglang登录成功!</td>
-
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">完成制单</td>
+                                                     <td class="center"><i class="fa fa-check color-green"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                         <a href="#">下载运单</a>
+                                                         <a href="#">下载CN23</a>
+                                                     </td>
                                                  </tr>
-                                                 <tr class="gradeC">
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">用户fenglang登录成功!</td>
-
-                                                 </tr>
-                                                 <tr class="gradeA">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td>Win 95+</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
 
                                                  </tr>
                                                  <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">添加订单申报信息成功，订单ID31552</td>
-
-                                                 </tr>
-                                                 <tr class="gradeC">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">Win 95+</td>
-
-                                                 </tr>
-                                                 <tr class="gradeA">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td>添加订单申报信息成功，订单ID31552</td>
-                                                 </tr>
-                                                 <tr class="gradeX">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:55:01</td>
-                                                     <td class="center hidden-phone">用户fenglang登录成功!</td>
-
-                                                 </tr>
-                                                 <tr class="gradeC">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">用户fenglang登录成功!</td>
-
-                                                 </tr>
-                                                 <tr class="gradeA">
-                                                     <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td>Win 95+</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
 
                                                  </tr>
                                                  <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">添加订单申报信息成功，订单ID31552</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">完成制单</td>
+                                                     <td class="center"><i class="fa fa-check color-green"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                         <a href="#">下载运单</a>
+                                                         <a href="#">下载CN23</a>
+                                                     </td>
+                                                 </tr>
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
+                                                     <td>89904</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
 
                                                  </tr>
-                                                 <tr class="gradeC">
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td class="center hidden-phone">Win 95+</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
 
                                                  </tr>
-                                                 <tr class="gradeA">
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
                                                      <td>89904</td>
-                                                     <td class="hidden-phone">2016/10/13 14:44:17</td>
-                                                     <td>添加订单申报信息成功，订单ID31552</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">完成制单</td>
+                                                     <td class="center"><i class="fa fa-check color-green"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                         <a href="#">下载运单</a>
+                                                         <a href="#">下载CN23</a>
+                                                     </td>
                                                  </tr>
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-01" id="checkbox-01" value="1" type="checkbox" checked /></td>
+                                                     <td>89904</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
+                                                 </tr>
+                                                 <tr class="gradeX">
+                                                     <td><input name="sample-checkbox-02" id="checkbox-02" value="1" type="checkbox">
+                                                     </td>
+                                                     <td>89904</td>
+                                                     <td>Jean</td>
+                                                     <td>Jack</td>
+                                                     <td>21</td>
+                                                     <td>60</td>
+                                                     <td>2016-08-09 12:22:33</td>
+                                                     <td>EY16546125416</td>
+                                                     <td class="hidden-phone">已取消</td>
+                                                     <td><i class="fa fa-times color-red"></i></td>
+                                                     <td class="center hidden-phone">
+                                                         <a href="#">详细</a>
+                                                     </td>
 
+                                                 </tr>
                                              </tbody>
+                                             
                                          </table>
+                                         <div class="mutil-download">
+                                             <input type="checkbox" />
+                                             <button type="button" class="btn btn-info btn-xs"> 批量下载 </button>
+                                         </div>
+                                         
                                      </div>
+                                     
+
                                  </div>
+
                              </section>
                          </div>
                      </div>
@@ -699,15 +878,13 @@
 			<!-- BEGIN FOOTER --> 
             <footer class="site-footer">
                <div class="text-center">
-                  2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.
-                  <a href="http://www.mycodes.net" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-                  </a>
+                  2016 &copy; Olive Admin by <a href="" target="_blank">彼得潘国际物流</a>.                 
                </div>
             </footer>
 			<!-- END FOOTER --> 
          </section>
 		 <!-- END SECTION --> 
+
       </div>
 	   <!-- BEGIN CONTAINER -->
 	   
@@ -718,20 +895,40 @@
 <!-- BEGIN JS -->
 <script language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script><!-- BASIC JQUERY JS  -->
 <script src="js/bootstrap.min.js"></script><!-- BOOTSTRAP JS  -->
+
+
 <script src="js/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
 <script src="js/jquery.scrollTo.min.js"></script><!-- SCROLLTO JS  -->
 <script src="js/jquery.nicescroll.js"> </script><!-- NICESCROLL JS  -->
+<script src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js"></script><!-- BOOTSTRAP DATEPICKER JS  -->
+<script src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><!-- BOOTSTRAP DATETIMEPICKER JS  -->
+<script src="assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script src="assets/bootstrap-daterangepicker/daterangepicker.js"></script><!-- BOOTSTRAP DATERANGEPICKER JS  -->
+<script src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><!-- BOOTSTRAP TIMEPICKER JS  -->
 <script language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js" charset="gbk"></script><!-- BASIC COMMON JS  -->
 <script src="assets/data-tables/DT_bootstrap.js"></script><!-- DATATABLE BOOTSTRAP JS  -->
 <script src="js/respond.min.js"></script><!-- RESPOND JS  -->
 <script src="js/common-scripts.js"></script><!-- BASIC COMMON JS  -->
+<script src="js/respond.min.js"></script><!-- RESPOND JS  -->
+<script src="assets/fuelux/js/spinner.min.js"></script><!-- FUELUX JS  -->
+<script src="assets/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script><!-- BOOTSTRAP wysihtml5 JS  -->
+<script src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script><!-- BOOTSTRAP wysihtml5 JS  -->
+<script src="assets/bootstrap-daterangepicker/moment.min.js"></script>
+<script src="assets/jquery-multi-select/js/jquery.multi-select.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
+<script src="assets/jquery-multi-select/js/jquery.quicksearch.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
+<script src="js/advanced-form-components.js"></script><!-- ADVANCE FORM COMPONENTS PAGE JS  -->
+<script src="assets/ckeditor/ckeditor.js"></script><!-- CKEDITOR JS  -->
+
+
+
 <script>
-	     <!-- DATATABLE JS  -->
+	    // <!-- DATATABLE JS  -->
          $(document).ready(function() {
              $('#example').dataTable( {
                  "aaSorting": [[ 4, "desc" ]]
              } );
-         } );
+         });
+
 </script>
 <!-- END JS --> 
 

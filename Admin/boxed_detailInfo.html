@@ -4,43 +4,34 @@
       <!-- BEGIN META --> 
 	  <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="">
-      <meta name="author" content="Olive Enterprise">
 	  <!-- END META -->
      
       <!-- BEGIN SHORTCUT ICON -->
 	  <link rel="shortcut icon" href="img/favicon.ico">
 	  <!-- END SHORTCUT ICON -->
      
-	 <title>导入制单</title>
-	  
-	  <!-- BEGIN STYLESHEET --> 
-      
+	 <title>彼得潘国际物流-订单详情</title>	  
+	  <!-- BEGIN STYLESHEET -->      
 	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS  -->
 	<link href="css/bootstrap-reset.css" rel="stylesheet"><!-- BOOTSTRAP CSS  -->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME CSS  -->
-    <link rel="stylesheet" type="text/css" href="assets/bootstrap-fileupload/bootstrap-fileupload.css"><!-- BOOTSTRAP FILEUPLOAD PLUGIN CSS -->
     <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS  -->
     <link href="css/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS  -->
-       <link href="css/jquery.stepy.css" rel="stylesheet"><!-- JQUERY STEPY WIZARD CSS -->
-       <style>
-           h3{margin-top:0px;}
-           .selectf{display:flex;}          
-       </style>
-      <!--[if lt IE 9]>
+     <style>
+         .info-text{display:inline;border-top:0;border-left:0;border-right:0;background-color:transparent;border-radius:0;color:#999;margin-right: 25px;min-width:10px;}
+          h3{font-family:'Microsoft YaHei';}
+      </style>
+        <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
       <![endif]-->
-	  
 	  <!-- END STYLESHEET --> 
    </head>
    <body class="boxed-page">
     <!-- BEGIN CONTAINER -->
       <div class="container">
-	     
 		  <!-- BEGIN SECTION --> 
          <section id="container">
-		     
 			 <!-- BEGIN HEADER --> 
             <header class="header white-bg">
                <div class="container ">
@@ -401,7 +392,7 @@
                  <div id="sidebar" class="nav-collapse">
                      <ul class="sidebar-menu" id="nav-accordion">
                          <li>
-                             <a href="index.html">
+                             <a href="index.html" class="active">
                                  <i class="fa fa-dashboard">
                                  </i>
                                  <span>
@@ -425,7 +416,7 @@
                                      </a>
                                  </li>
                                  <li>
-                                     <a href="horizontal_menu.html" class="active">
+                                     <a href="horizontal_menu.html">
                                          导入制单
                                      </a>
                                  </li>
@@ -572,11 +563,6 @@
                                      </a>
                                  </li>
                                  <li>
-                                     <a href="todo_list.html">
-                                         修改密码
-                                     </a>
-                                 </li>
-                                 <li>
                                      <a href="draggable_portlet.html">
                                          操作日志
                                      </a>
@@ -592,68 +578,144 @@
             <section id="main-content">
 			<!-- BEGIN WRAPPER  -->
                <section class="wrapper">
-                   <!-- BEGIN ROW  -->
-                   <!--<div class="row">
-                       <div class="col-lg-12">
-                           <ul class="breadcrumb">
-                               <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                               <li>»</li>
-                               <li><a href="#">Library</a></li>
-                               <li>»</li>
-                               <li class="active">Data</li>
-                           </ul>
-                       </div>
-                   </div>-->
-                   <!-- END ROW  -->
+
                    <!-- BEGIN ROW  -->
                    <div class="row">
+                      
                        <div class="col-md-12">
-                           <section class="panel">
-                               <header class="panel-heading">
-                                   <span class="label label-primary">导入制单</span>
-                                   <span class="tools pull-right">
-                                       <a href="javascript:;" class="fa fa-chevron-down"></a>
-                                       <a href="javascript:;" class="fa fa-times"></a>
-                                   </span>
-                               </header>
-                               <div class="panel-body">
-                                   <!--<h4 class="fw-title">制单流程</h4>-->
-                                   <form role="form">
-                                       <div class="form-group">
-                                           <!--<label class="control-label col-md-3">
-                                               导入订单文件
-                                           </label>-->
-                                           <div class="controls col-md-9">
-                                               <div class="fileupload fileupload-new" data-provides="fileupload">
-                                                   <span class="btn btn-white btn-file">
-                                                       <span class="fileupload-new">
-                                                           <i class="fa fa-paper-clip">
-                                                           </i>
-                                                           选择文件
-                                                       </span>
-                                                       <span class="fileupload-exists">
-                                                           <i class="fa fa-undo">
-                                                           </i>
-                                                           修改文件
-                                                       </span>
-                                                       <input type="file" class="default">
-                                                   </span>
-                                                   <span class="fileupload-preview m-l-5">
-                                                   </span>
-                                                   <a href="#" class="close fileupload-exists" data-dismiss="fileupload">
-                                                   </a>
-                                               </div>
-                                           </div>
-                                       </div>
-                                       
-                                       <button type="submit" class="btn btn-info"> 导 入 </button>
-                                       <button type="button" class="btn btn-success">
-                                           下载模板
-                                       </button>
-                                   </form> 
-                                                                     
-                               </div>
-                           </section>
+                           <h3> 订单类型 </h3>
+                           <div class="well">
+                               <label>下单系统：</label>
+                               <label class="form-control info-text">法国邮政</label>
+                               <label>制单时间：</label>
+                               <label class="form-control info-text">2016-02-02 12:50:50</label>
+                               <br />
+                               <br />
+                               <label>制单方式：</label>
+                               <label class="form-control info-text">自投邮局</label>
+                               <label>包装材料：</label>
+                               <label class="form-control info-text">套餐一：泡泡箱</label>
+                               
+                           </div>
+                           <h3> 寄件人信息 </h3>
+                           <div class="well well-large">
+                               <label>寄件人：</label>
+                               <label class="form-control info-text">kk</label>
+                               <label>手机号码：</label>
+                               <label class="form-control info-text">159020202020</label>
+                               <label>出发城市：</label>
+                               <label class="form-control info-text">Paris</label>
+                               <label>邮编：</label>
+                               <label class="form-control info-text">3022220</label>
+                               <br />
+                               <br />
+
+                               <label>证件类型：</label>
+                               <label class="form-control info-text">身份证</label>
+                               <label>证件号码：</label>
+                               <label class="form-control info-text">430202020205689545</label>
+                               <br />
+                               <br />
+                               <label>详细地址：</label>
+                               <label class="form-control info-text">浙江省杭州市余杭区利尔达大厦1幢802</label>
+                            </div>
+                           <h3> 收件人信息 </h3>
+
+                           <div class="well well-large">
+                               <label>收件人：</label>
+                               <label class="form-control info-text">Coco</label>
+                               <label>手机号码：</label>
+                               <label class="form-control info-text">159020202020</label>
+
+                               <label>到达城市：</label>
+                               <label class="form-control info-text">Paris</label>                               
+                               <label>邮编：</label>
+                               <label class="form-control info-text">3022220</label>
+                               <br />
+                               <br />
+                               <label>证件类型：</label>
+                               <label class="form-control info-text">身份证</label>
+                               <label>证件号码：</label>
+                               <label class="form-control info-text">430202020205689545</label>
+                               <br />
+                               <br />
+                               <label>公司名称：</label>
+                               <label class="form-control info-text">利尔达</label>
+                               <br />
+                               <br />
+                                <label>详细地址：</label>
+                               <label class="form-control info-text">浙江省杭州市余杭区利尔达大厦1幢802</label>
+                           </div>
+                           <h3> 包裹信息 </h3>
+                           
+                           <div class="well well-large">
+                               <label>包裹重量(KG)：</label>
+                               <label class="form-control info-text">22.2</label>
+                               <label>包裹体积(CM)：</label>
+                               <label class="form-control info-text">2*2*2.4</label>
+                               <br />
+                               <br />
+                               <label>物品类型：</label>
+                               <label class="form-control info-text">样品</label>
+                               <label>物品数量(PCS)：</label>
+                               <label class="form-control info-text">5</label>
+                               <br />
+                               <br />
+                               <label>包裹说明：</label>
+                               <label class="form-control info-text"></label>
+                           </div>
+                           <h3> 申报信息 </h3>
+
+                           <div class="well well-large">
+                               <label>申报内容：</label>
+                               <label class="form-control info-text" style="display:block;border:0;">
+                                   商品名称：a 商品数量：10 商品重量：0.22 商品单价：1 商品编号： 商品支付源：FR<br />
+                                   商品名称：a 商品数量：10 商品重量：0.22 商品单价：1 商品编号： 商品支付源：FR<br/>
+                                   商品名称：a 商品数量：10 商品重量：0.22 商品单价：1 商品编号： 商品支付源：FR
+                               </label>
+                               <br />
+                               <br />
+                               <label>发票号：</label>
+                               <label class="form-control info-text">225265268</label>
+                               <label>发票金额：</label>
+                               <label class="form-control info-text">266.22</label>
+                               <label>商品用途：</label>
+                               <label class="form-control info-text">商业</label>
+                               <label>保险费用：</label>
+                               <label class="form-control info-text">21.252</label>
+                               <br />
+                               <br />
+                           </div>
+                           <h3> 运费信息 </h3>
+                           <div class="well well-large">
+                               <label>运费：</label>
+                               <label class="form-control info-text">110.00</label>
+                               <label>补扣运费：</label>
+                               <label class="form-control info-text">266.22</label>
+                               <label>材料费：</label>
+                               <label class="form-control info-text">545.22</label>
+                               <label>内部单号：</label>
+                               <label class="form-control info-text">6846519684</label>
+                               <br />
+                               <br />
+                               <label>补扣说明：</label>
+                               <label class="form-control info-text">说明</label>
+                           </div>
+                           <h3> 订单信息 </h3>
+                           <div class="well well-large">
+                               <label>订单编号：</label>
+                               <label class="form-control info-text">2595</label>
+                               <label>运单编号：</label>
+                               <label class="form-control info-text">266.22</label>
+                               <label>订单状态：</label>
+                               <label class="form-control info-text">已取消</label>
+                               <label>运单状态：</label>
+                               <label class="form-control info-text">未投递</label>
+                               <br />
+                               <br />
+                               <label>订单说明：</label>
+                               <label class="form-control info-text">说明</label>
+                           </div>
                        </div>
                    </div>
                    <!-- END ROW  -->
@@ -664,7 +726,7 @@
 			<!-- BEGIN FOOTER --> 
             <footer class="site-footer">
                <div class="text-center">
-                  2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.                 
+                  2016 &copy; 端祥 <a href="" target="_blank">彼得潘国际物流</a>.
                </div>
             </footer>
 			<!-- END FOOTER --> 
@@ -681,9 +743,6 @@
     <script src="js/jquery.nicescroll.js" > </script><!-- NICESCROLL JS  -->
     <script src="js/respond.min.js" ></script><!-- RESPOND JS  -->
     <script src="js/common-scripts.js" ></script><!-- BASIC COMMON JS  -->
-    <script src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script><!-- BOOTSTRAP FILEUPLOAD JS  -->
-   
-       <!-- END JS -->
 	<!-- END JS --> 
    </body>
 </html>

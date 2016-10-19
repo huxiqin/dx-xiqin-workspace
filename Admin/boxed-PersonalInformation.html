@@ -6,15 +6,10 @@
       <meta name="description" content="">
       <meta name="author" content="Olive Enterprise">
 	  <!-- END META -->
-     
       <!-- BEGIN SHORTCUT ICON -->
 	  <link rel="shortcut icon" href="img/favicon.ico">
-	  <!-- END SHORTCUT ICON -->
-     
+	  <!-- END SHORTCUT ICON -->    
 	 <title>Olive Admin - Flat & Responsive Bootstrap Admin Template</title>
-	  
-	  
-	  
 	  <!-- BEGIN STYLESHEET --> 
     <link href="css/information.css" rel="stylesheet" />
 	<link href="css/bootstrap.min.css" rel="stylesheet"><!-- BOOTSTRAP CSS  -->
@@ -22,7 +17,9 @@
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"><!-- FONT AWESOME CSS  -->
     <link href="css/style.css" rel="stylesheet"><!-- THEME BASIC CSS  -->
     <link href="css/style-responsive.css" rel="stylesheet"><!-- THEME RESPONSIVE CSS  -->
-
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/datepicker.css"><!-- 出生日期样式 -->
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-datetimepicker/css/datetimepicker.css"><!-- 出生日期样式 -->
+    <link href="css/style.css" rel="stylesheet"><!-- 出生日期样式 -->
       <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
@@ -595,11 +592,21 @@
                                                  <div class="col-lg-4">
                                                      <input class="form-control valid" id="original_password" name="original_password" type="text">
                                                  </div>
+                                                 <label for="password" id="gr-error1"></label>
                                              </div>
+
                                              <div class="form-group ">
                                                  <label for="password" class="control-label col-lg-2">出生日期</label>
-                                                 <div class="col-lg-4">
-                                                     <input class="form-control" id="password" name="password" type="text">
+                                                 <div class="col-md-4 col-xs-11">
+                                                     <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="12-02-2012" class="input-append date dpYears">
+                                                          <input type="text" readonly="" value="12-02-2012" size="16" class="form-control">
+                                                          <span class="input-group-btn add-on">
+                                                            <button class="btn btn-info date-set" type="button">
+                                                              <i class="fa fa-calendar">
+                                                              </i>
+                                                            </button>
+                                                          </span>
+                                                        </div>
                                                  </div>
                                              </div>
                                              <div class="form-group ">
@@ -612,19 +619,21 @@
                                              <div class="form-group ">
                                                  <label for="confirm_password" class="control-label col-lg-2">手&nbsp;&nbsp;&nbsp;机&nbsp;&nbsp;&nbsp;号</label>
                                                  <div class="col-lg-4">
-                                                     <input class="form-control" id="confirm_password" name="confirm_password" type="text">
+                                                     <input class="form-control" id="gr-phone" name="confirm_password" type="text">
                                                  </div>
+                                                 <label for="password" id="gr-error2"></label>
                                              </div>
                                              <div class="form-group ">
                                                  <label for="confirm_password" class="control-label col-lg-2">Q&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;&nbsp;号</label>
                                                  <div class="col-lg-4">
-                                                     <input class="form-control" id="confirm_password" name="confirm_password" type="text">
+                                                     <input class="form-control" id="gr-qq" name="confirm_password" type="text">
                                                  </div>
+                                                 <label for="password" id="gr-error3"></label>
                                              </div>
                                              <div class="form-group">
                                                  <div class="col-lg-offset-5">
-                                                     <button class="btn btn-primary  col-lg-2" type="submit">提交</button>
-                                                     <button class="btn btn-default  col-lg-2" type="button">重填</button>
+                                                     <button class="btn btn-primary col-lg-2" type="submit" id="btn-primary">提交</button>
+                                                     <button class="btn btn-default col-lg-2" type="button">重填</button>
                                                  </div>
                                              </div>
                                          </form>
@@ -641,10 +650,7 @@
 			<!-- BEGIN FOOTER --> 
             <footer class="site-footer">
                <div class="text-center">
-                  2013 &copy; Olive Admin by <a href="" target="_blank">Olive Enterprise</a>.
-                  <a href="http://www.mycodes.net" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-                  </a>
+                   2016 &copy; 端祥 <a href="" target="_blank">彼得潘国际物流</a>.
                </div>
             </footer>
 			<!-- END FOOTER --> 
@@ -663,14 +669,48 @@
 <script src="js/jquery.dcjqaccordion.2.7.js"></script><!-- ACCORDING JS -->
 <script src="js/jquery.scrollTo.min.js"></script><!-- SCROLLTO JS  -->
 <script src="js/jquery.nicescroll.js"> </script><!-- NICESCROLL JS  -->
-<script language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js" charset="gbk"></script><!-- BASIC COMMON JS  -->
-<script src="assets/data-tables/DT_bootstrap.js"></script><!-- DATATABLE BOOTSTRAP JS  -->
 <script src="js/respond.min.js"></script><!-- RESPOND JS  -->
 <script src="js/common-scripts.js"></script><!-- BASIC COMMON JS  -->
+<script src="assets/fuelux/js/spinner.min.js"></script><!-- FUELUX JS  -->
+<script src="assets/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script><!-- BOOTSTRAP wysihtml5 JS  -->
+<script src="assets/bootstrap-datepicker/js/bootstrap-datepicker.js" charset="gbk"></script><!--出生日期 -->
+<script src="assets/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script><!-- BOOTSTRAP DATETIMEPICKER JS  -->
+<script src="assets/bootstrap-colorpicker/js/bootstrap-colorpicker.js"> </script><!-- BOOTSTRAP COLORPICKER JS  -->
+<script src="assets/bootstrap-timepicker/js/bootstrap-timepicker.js"></script><!-- BOOTSTRAP TIMEPICKER JS  -->
+<script src="assets/jquery-multi-select/js/jquery.multi-select.js"></script><!-- BOOTSTRAP MULTISELECT JS  -->
+<script src="js/advanced-form-components.js"></script><!-- 出生日期  -->
+
 <script>
     $(function () {
-        $(".form-control").click(function () {
-            $(this).addClass("error").parent().parent().siblings().find("input").removeClass("error")
+        $("#btn-primary").click(function () {
+            $("#original_password").addClass("error");
+            var email = $("#original_password").val();
+            var telephone = $("#gr-phone").val();
+            var qq = $("#gr-qq").val();
+            var email1 = /^[\w]+(\.[\w]+)*@[\w]+(\.[\w]+)+$/;
+            var telephone1 = /^[1]{1}[0-9]{10}/;
+            var qq1 = /^\d{5,10}$/;
+            if (email.length == 0) {
+                $("#gr-error1").html("email不可以为空");
+                return false;
+            } else if (!email1.test(email)) {
+                $("#gr-error1").html("请输入合法电子邮件");
+                return false;
+            } else { $("#gr-error1").html("<div class='zc-right'><i class='fa fa-check-circle'></i></div>"); }
+            if (telephone.length == 0) {
+                $("#gr-error2").html("电话不可以为空");
+                return false;
+            } else if (!telephone1.test(telephone)) {
+                $("#gr-error2").html("请输入合法电话");
+                return false;
+            } else { $("#gr-error1").html("<div class='zc-right'><i class='fa fa-check-circle'></i></div>"); }
+            if (qq.length == 0) {
+                $("#gr-error3").html("QQ不可以为空");
+                return false;
+            } else if (!qq1.test(qq)) {
+                $("#gr-error3").html("请输入合法QQ");
+                return false;
+            } else { $("#gr-error1").html("<div class='zc-right'><i class='fa fa-check-circle'></i></div>"); }
         })
     })
 </script>
