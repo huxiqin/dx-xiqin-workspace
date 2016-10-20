@@ -7,9 +7,7 @@
 
 /*操作日志页样式*/
 .adv-table .dataTables_filter label input {float: right;margin-left: 10px;width: 77% !important;}
-/*#example_length {float: left;}*/
 #example_info {float: left;}
-/*#example_length {width: 190px;overflow: hidden;height: 50px;}*/
 .dataTables_paginate.paging_bootstrap.pagination li:hover a, .dataTables_paginate.paging_bootstrap.pagination li.active a{background:#4895cb !important;border:none !important;}
 
 
@@ -38,6 +36,18 @@
 .zh-bio{margin-left:75px !important;}
 .zh-careful p span{width:35px !important;}
 label{font-weight:normal !important;}
+
+/*用户中心*/
+.yh-user{font-size:14px;height: 90px;line-height: 62px;margin-left: 0px;}
+.yh-name{font-size:14px; font-weight:bold; color:#005598;margin: 0 5px;}
+.yh-personaltailor{color:red;margin-left:5px;}
+.yh-account{font-size: 14px;margin: 15px;}
+.yh-account p {float: left;width: 160px;}
+.yh-information {margin-top: 16px;margin-left: 16px;}
+.yh-name-a{color:#59ace2;}
+.yh-information p {font-size: 13px;height: 22px;line-height: 22px;}
+.yh-bio-row {margin-left: -56px;}
+
     
     
 
